@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula04</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+  
+
+    <div id="data-container"></div>
+
+   <!-- <button onclick="getData()">GET</button> -->
+    
+<div class="div_form">
+    <form action="http://localhost:3000/data" method="post">
+      
+
+            <div class="form_control">
+
+                <label for="text-input" id="text_label">Your Name:</label>
+                <input type="text" name="text" id="text-input">
+                
+            </div>
+
+            <div class="form_control">
+
+                <label for="text-input" id="text_label">Email:</label>
+                <input type="email" name="Email" id="text-input">
+                
+            </div>
+
+            
+
+            <div class="form_control">
+
+                <label for="password-input" id="password_label">Password:</label>
+                <input type="password" name="passowrd" id="passowrd">
+
+            </div>
+
+       
+
+        <div class="div_submit">
+
+            <input type="submit" value="POST" id="submit">
+            
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+/* AQUI ESTÃO AS " Divs" */
+.div_form{
+    display: flex;
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);    
+    padding: 30px;
+    height: 1000px;
+    width: 100%;
+    justify-content: center;
+}
+
+
+
+.form_control{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    margin-bottom: 15px;
+}
+
+.div_submit{
+    display: flex;
+    padding-left:10px;
+    padding-top: 30px;
+}
+
+/* AQUI ESTÁ O FORM  */
+
+form{
+    display: flex;
+    background-color: #00000052;
+    border-radius: 20px;
+    padding: 30px;
+    max-height: 600px;
+    width: 400px;
+    flex-direction: column;
+    
+}
+
+
+/* ANCHOR Como aplicar a grid no meu form*/
+
+/*Aqui as labels */
+
+label{
+    display: flex;
+    color: white;
+    padding-right: 35px;
+    font-size:20px;
+  
+}
+
+
+
+#password_label{
+    display: flex;
+    width: 30px;
+    color: white;
+    padding-right: 60px;
+    font-size:20px;
+}
+
+/* AQUI OS INPUTS*/
+
+input{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.306);
+    border-radius: 20px;
+    height:40px;
+    padding-left: 10px;
+    color: white;
+}
+
+
+
+#submit{
+    background-color: rgb(0, 174, 255);
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    width: 5vw;
+    justify-content: center;
+}
+
+#submit:active{
+    background-color: greenyellow;
+}
+
