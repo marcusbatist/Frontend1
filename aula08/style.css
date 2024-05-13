@@ -1,0 +1,12 @@
+.word-counter {
+    position: relative; /* Necessário para o posicionamento absoluto */
+    height: 100vh; /* Define a altura para ocupar a altura total da tela */
+}
+
+.word-counter button {
+    position: absolute;
+    top: 50%; /* Move o topo do botão para o meio do contêiner pai */
+    left: 50%; /* Move a esquerda do botão para o meio do contêiner pai */
+    transform: translate(-50%, -50%); /* Desloca o botão de volta pela metade de sua própria largura e altura */
+    /* Estilos do botão */
+}
