@@ -89,12 +89,12 @@ window.onload = () => {
     Object.assign(after.style, afterStyle);
     button.appendChild(after);
 
-    // Adiciona efeito de aumento de tamanho ao clicar no botão
+   
     button.addEventListener("click", () => {
-        button.style.padding = "15px"; // Aumenta o padding
+        button.style.padding = "15px"; 
         setTimeout(() => {
-            button.style.padding = "10px"; // Retorna ao tamanho original após um pequeno intervalo
-        }, 200); // Intervalo em milissegundos
+            button.style.padding = "10px"; 
+        }, 200); 
     });
 
     console.log(wordcounter.numbWords);
