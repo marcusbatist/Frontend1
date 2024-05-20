@@ -50,7 +50,7 @@ template.innerHTML = `
             <button id="next">Next</button>
         </div>
 
-        <web-toggle-button id="play-pause"></web-toggle-button>
+        <slot name="element-name">NEED NAME</slot>
         
     </div>
 `;
@@ -105,18 +105,17 @@ class WebGallery extends HTMLElement {
             this.#playPause();
         }
 
-        this.shadowRoot.querySelector('#play-pause').onclick = (ev) => {
-            console.log('play pause clicked');
+        this.shadowRoot.querySelector('#play-pause').addEventListener("toggle", () => {
             this.#playPause();
-
-            if(this.#intervalID) ev.target.innerText = "STOP";
-            else ev.target.innerText = "PLAY";
 
             const event = new CustomEvent('play-pause', {detail: {
                     isPlaying: this.#intervalID !== null 
                 }});
             this.dispatchEvent(event);
-        }
+
+        })
+
+     
 
     }
 
@@ -244,15 +243,34 @@ class WebToggleButton extends HTMLElement {
 
     shadowRoot;
     #iconsContainer = null;
+    #toggled=true;
     constructor() {
         super();
         this.shadowRoot = this.attachShadow({ mode: 'closed' });
         this.shadowRoot.appendChild(toggleTemplate.content.cloneNode(true));
         this.#iconsContainer = this.shadowRoot.querySelector("#icons-container");
+        
     }
 
     connectedCallback() {
+        this.#iconsContainer.onclick = () => {
+            this.#toggled = !this.#toggled; 
+            this.toggle();
+          
+            const event = new CustomEvent("toggled");
+            this.dispatchEvent(event);
+        }
+    }
 
+    toggle(){
+        if(this.#toggled) {
+            this.#iconsContainer.children[0].style.opacity = 1;
+            this.#iconsContainer.children[1].style.opacity = 0;
+        } else{
+            this.#iconsContainer.children[0].style.opacity = 0;
+            this.#iconsContainer.children[1].style.opacity = 1;
+        }
+      
     }
 
     attributeChangedCallback() {
